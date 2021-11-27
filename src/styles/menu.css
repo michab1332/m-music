@@ -1,0 +1,52 @@
+.container {
+    margin-top: 20px;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: #C4C4C4 3px solid;
+    border-bottom: #C4C4C4 3px solid;
+}
+
+.container__wrapper {
+    display: flex;
+    height: 100%;
+    width: 85%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container__rightWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.container__logo-text {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.container__logIn-text {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.container__form {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.container__form-input {
+    border: none;
+    border-bottom: 2px solid #C4C4C4;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.container__form-searchSymbol {
+    width: 23px;
+    height: 23px;
+    opacity: 50%;
+    cursor: pointer;
+}
