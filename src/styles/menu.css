@@ -1,4 +1,4 @@
-.container {
+.containerMenu {
     margin-top: 20px;
     height: 70px;
     width: 100%;
@@ -8,7 +8,7 @@
     border-bottom: #C4C4C4 3px solid;
 }
 
-.container__wrapper {
+.containerMenu__wrapper {
     display: flex;
     height: 100%;
     width: 85%;
@@ -16,42 +16,42 @@
     align-items: center;
 }
 
-.container__rightWrapper {
+.containerMenu__rightWrapper {
     display: flex;
     align-items: center;
 }
 
-.container__logo-text {
+.containerMenu__logo-text {
     font-size: 2rem;
     cursor: pointer;
 }
 
-.container__logIn-text {
+.containerMenu__logIn-text {
     font-size: 1.5rem;
     cursor: pointer;
 }
 
-.container__form {
+.containerMenu__form {
     display: flex;
     align-items: center;
     margin-right: 2rem;
 }
 
-.container__form-input {
+.containerMenu__form-input {
     border: none;
     border-bottom: 2px solid #C4C4C4;
     font-size: 1.2rem;
     outline: none;
 }
 
-.container__form-searchSymbol {
+.containerMenu__form-searchSymbol {
     width: 23px;
     height: 23px;
     opacity: 50%;
     cursor: pointer;
 }
 
-.container:before {
+.containerMenu:before {
     content: "";
     width: 1.5px;
     left: 5%;
@@ -61,7 +61,7 @@
     background-color: black;
 }
 
-.container:after {
+.containerMenu:after {
     content: "";
     width: 1.5px;
     right: 5%;
@@ -72,26 +72,26 @@
 }
 
 @media only screen and (max-width: 570px) {
-    .container__form-searchSymbol {
+    .containerMenu__form-searchSymbol {
         width: 19px;
         height: 19px;
     }
 
-    .container__form-input {
+    .containerMenu__form-input {
         font-size: 0.9rem;
         max-width: 120px;
     }
 
-    .container__form {
+    .containerMenu__form {
         margin-right: 1rem;
     }
 
-    .container__logo-text {
+    .containerMenu__logo-text {
         font-size: 1.5rem;
         cursor: pointer;
     }
     
-    .container__logIn-text {
+    .containerMenu__logIn-text {
         font-size: 1rem;
         cursor: pointer;
     }

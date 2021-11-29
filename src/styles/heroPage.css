@@ -1,0 +1,36 @@
+.containerHero {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+}
+
+.containerHero__wrapper {
+    height: 100%;
+    width: 90%;
+}
+
+.containerHero__heroImage {
+    
+}
+
+.containerHero__heroImage-vector1 {
+    position: absolute;
+    left: -50px;
+    top: -10px;
+}
+
+.containerHero__heroImage-img {
+    width: 477px;
+    height: 700px;
+    position: absolute;
+    top: -120px;
+
+}
+
+.containerHero__heroImage-vector2 {
+    position: absolute;
+    left: 200px;
+    top: 30px
+}
