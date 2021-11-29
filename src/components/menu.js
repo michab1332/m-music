@@ -13,7 +13,7 @@ function Menu() {
 
                 <div className="container__rightWrapper">
                     <form className="container__form">
-                        <input onChange={(e) => setSearch(e.target.value)} value={search} className="container__form-input" type="text" placeholder="search for some music" />
+                        <input onChange={(e) => setSearch(e.target.value)} value={search} className="container__form-input" type="text" placeholder="search music..." />
                         <img className="container__form-searchSymbol" src={require('../images/searchSymbol.png').default} alt="search icon" />
                     </form>
 

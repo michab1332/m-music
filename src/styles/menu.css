@@ -50,3 +50,49 @@
     opacity: 50%;
     cursor: pointer;
 }
+
+.container:before {
+    content: "";
+    width: 1.5px;
+    left: 5%;
+    top: 0;
+    height: 100vh;
+    position: absolute;
+    background-color: black;
+}
+
+.container:after {
+    content: "";
+    width: 1.5px;
+    right: 5%;
+    top: 0;
+    height: 100vh;
+    position: absolute;
+    background-color: black;
+}
+
+@media only screen and (max-width: 570px) {
+    .container__form-searchSymbol {
+        width: 19px;
+        height: 19px;
+    }
+
+    .container__form-input {
+        font-size: 0.9rem;
+        max-width: 120px;
+    }
+
+    .container__form {
+        margin-right: 1rem;
+    }
+
+    .container__logo-text {
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    
+    .container__logIn-text {
+        font-size: 1rem;
+        cursor: pointer;
+    }
+  }
