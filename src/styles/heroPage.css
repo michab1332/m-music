@@ -1,23 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500&display=swap');
+
 .containerHero {
     position: relative;
     width: 100%;
     height: 75vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
 .containerHero__wrapper {
     height: 100%;
     width: 90%;
+    display: flex;
 }
 
 .containerHero__heroImage {
-    
+    height: 100%;
+    width: 50%;
 }
 
 .containerHero__heroImage-vector1 {
     position: absolute;
-    left: -50px;
+    left: -10px;
     top: -10px;
 }
 
@@ -31,6 +36,54 @@
 
 .containerHero__heroImage-vector2 {
     position: absolute;
-    left: 200px;
+    left: 230px;
     top: 30px
+}
+
+.container__heroText {
+    height: 100%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container__heroText-titleText {
+    font-size: 5rem;
+    font-family: 'Bai Jamjuree', sans-serif;
+    margin-bottom: 20px;
+}
+
+.container__heroText-description {
+    font-weight: 700;
+    margin: 20px 0;
+    font-size: large;
+}
+
+.container__heroText-button {
+    width: 200px;
+    height: 35px;
+    background: #FB0AFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.containerHero__textRoll {
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transform: translateY(50px);
+}
+
+.containerHero__textRoll__content {
+    width: 90%;
 }

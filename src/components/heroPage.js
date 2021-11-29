@@ -11,8 +11,19 @@ function HeroPage() {
                     <img className="containerHero__heroImage-img" src={require('../images/pexels-anna-shvets-4315839.png').default} alt="anna" />
                     <img className="containerHero__heroImage-vector2" src={require('../svg/vector2.svg').default} alt="vector2" />
                 </div>
+
+                <section className="container__heroText">
+                    <p className="container__heroText-titleText">Fresh Music from around the World</p>
+                    <p className="container__heroText-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <button className="container__heroText-button">Click to see more</button>
+                </section>
             </section>
-        </div>
+            <div className="containerHero__textRoll">
+                <div className="containerHero__textRoll__content">
+                    <p>the hottest hits</p>
+                </div>
+            </div>
+        </div >
     )
 }
 
