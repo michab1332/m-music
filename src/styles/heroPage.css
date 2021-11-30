@@ -37,7 +37,12 @@
 .containerHero__heroImage-vector2 {
     position: absolute;
     left: 230px;
-    top: 30px
+    top: 30px;
+    transition: all 2s;
+}
+
+.-move {
+    transform: translateX(50px);
 }
 
 .container__heroText {
@@ -86,4 +91,22 @@
 
 .containerHero__textRoll__content {
     width: 90%;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.containerHero__textRoll-items {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.containerHero__textRoll-item {
+    
 }
