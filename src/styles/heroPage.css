@@ -98,15 +98,50 @@
 
 .containerHero__textRoll-items {
     position: absolute;
-    width: 100%;
+    width: 2000px;
     top: 50%;
     transform: translateY(-50%);
     left: 0;
     display: flex;
     justify-content: space-around;
+    overflow: hidden;
 
 }
 
 .containerHero__textRoll-item {
-    
+    min-width: 50px;
+}
+
+@media only screen and (max-width: 1050px) {
+    .containerHero {
+        position: relative;
+        width: 100%;
+        height: 75vh;
+        display: flex;
+    }
+
+    .containerHero__wrapper {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .containerHero__heroImage {
+        display: none;
+    }
+
+    .container__heroText {
+        min-width: 70%;
+    }
+
+    .container__heroText-titleText  {
+        font-size: 2rem;
+    }
+
+    .container__heroText-description {
+        width: 100%;
+        font-weight: 500;
+        margin-top: 0;
+    }
 }

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import '../styles/heroPage.css'
 
@@ -31,6 +31,8 @@ function HeroPage() {
             <div className="containerHero__textRoll">
                 <div className="containerHero__textRoll__content">
                     <ul className="containerHero__textRoll-items">
+                        <li className="containerHero__textRoll-item">the hottest hits</li>
+                        <li className="containerHero__textRoll-item">the hottest hits</li>
                         <li className="containerHero__textRoll-item">the hottest hits</li>
                         <li className="containerHero__textRoll-item">the hottest hits</li>
                         <li className="containerHero__textRoll-item">the hottest hits</li>
