@@ -91,9 +91,11 @@
 
 .containerHero__textRoll__content {
     width: 90%;
-    height: 150px;
+    height: 100%;
     overflow: hidden;
     position: relative;
+    border-left: 2px #fff solid;
+    border-right: 2px #fff solid;
 }
 
 .containerHero__textRoll-items {

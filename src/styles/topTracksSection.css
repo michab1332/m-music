@@ -1,0 +1,9 @@
+.containerTopTracks {
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 2px #000 solid;
+    border-right: 2px #000 solid;
+    width: 90%;
+
+}
