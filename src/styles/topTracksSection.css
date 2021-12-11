@@ -1,9 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .containerTopTracks {
-    margin-top: 70px;
+    margin-top: 49px;
     margin-left: auto;
     margin-right: auto;
     border-left: 2px #000 solid;
     border-right: 2px #000 solid;
     width: 90%;
+    height: 100vh;
+    display: flex;
+}
 
+span {
+    letter-spacing: 1rem;
+    background: linear-gradient(-45deg, #FB0AFF 0%, #AFC8FA 91.15%);
+    background-clip: text;
+    color: transparent;
+    background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+}
+
+.containerTopTrack {
+    min-height: 70vh;
+    width: 50%;
+}
+
+.containerTopTrack__titleText {
+    margin-top: 1rem;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-weight: 700;
+    font-size: 70px;        
+}
+
+@media only screen and (max-width: 1050px) {
+    .containerTopTracks {
+        flex-direction: column;
+    }
+
+    .containerTopTrack {
+        width: 100%;
+    }
+
+    .containerTopTrack__titleText {
+        margin-top: 1rem;
+        font-weight: 500;
+        font-size: 40px; 
+    }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

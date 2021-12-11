@@ -68,7 +68,7 @@
 .container__heroText-button {
     width: 200px;
     height: 35px;
-    background: #FB0AFF;
+    background: linear-gradient(180deg, #FB0AFF 0%, #AFC8FA 91.15%);
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 20px;
