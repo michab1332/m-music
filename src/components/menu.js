@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import '../styles/menu.css'
 
-function Menu() {
+function Menu({ handleLogin }) {
     const [search, setSearch] = useState();
     return (
         <div className="containerMenu">
@@ -18,7 +18,7 @@ function Menu() {
                     </form>
 
                     <div className="containerMenu__logIn">
-                        <p className="containerMenu__logIn-text">Log in</p>
+                        <p onClick={() => handleLogin()} className="containerMenu__logIn-text">Log in</p>
                     </div>
                 </div>
             </div>

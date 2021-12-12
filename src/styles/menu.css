@@ -31,6 +31,10 @@
     cursor: pointer;
 }
 
+.containerMenu__logIn-text:hover {
+    text-decoration: underline;
+}
+
 .containerMenu__form {
     display: flex;
     align-items: center;
