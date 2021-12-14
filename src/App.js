@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import Menu from './components/menu'
 import HeroPage from './components/heroPage';
@@ -24,16 +24,18 @@ const getReturnedParamsFromSpotifyAuth = (hash) => {
 }
 
 function App() {
+  const [token, setToken] = useState()
   useEffect(() => {
     if (window.location.hash) {
       const { access_token, expires_in, token_type } = getReturnedParamsFromSpotifyAuth(window.location.hash);
 
       localStorage.clear();
       localStorage.setItem('accessToken', access_token);
+      setToken(access_token);
       localStorage.setItem('expiresIn', expires_in);
       localStorage.setItem('tokenType', token_type);
     }
-  })
+  }, [])
   const handleLogin = () => {
     window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=&${SCOPES_URL_PARAMS}&response_type=token&show_dialog=true`;
   }
@@ -41,7 +43,7 @@ function App() {
     <div className="App">
       <Menu handleLogin={handleLogin} />
       <HeroPage />
-      <TopTracksSection />
+      {token !== undefined ? <TopTracksSection token={token} /> : null}
     </div>
   );
 }

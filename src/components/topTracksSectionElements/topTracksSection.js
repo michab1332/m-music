@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import axios from "axios"
+import SpotifyWebApi from 'spotify-web-api-js';
+// import axios from 'axios';
 
 import TopTrackSection from './topTrackSection';
 
@@ -41,35 +42,30 @@ const DATA_TOP_TRACKS_IN_THE_WORLD = [
 const SPOTIFY_TOP_5_POLAND_ENDPOINT = "37i9dQZEVXbN6itCcaL3Tt";
 const SPOTIFY_TOP_5_WORLD_ENDPOINT = "37i9dQZEVXbMDoHDwVN2tF";
 
-function TopTracksSection() {
-    const [token, setToken] = useState('')
+function TopTracksSection({ token }) {
+
     const [data, setData] = useState([])
 
     useEffect(() => {
-        if (localStorage.getItem('accessToken')) {
-            setToken(localStorage.getItem('accessToken'))
-        }
-    }, [])
+        console.log(token)
+    })
 
-    useEffect(() => {
-        handleGetTracks(SPOTIFY_TOP_5_POLAND_ENDPOINT)
-        console.log(data)
-    }, [])
 
-    const handleGetTracks = (playlistId) => {
-        axios.get(`https://api.spotify.com/v1/playlists/${playlistId}/tracks?fields=items(track)&limit=5`, {
-            headers: {
-                Authorization: 'Bearer ' + token
-            },
-        }).then((response) => {
-            setData(response.data)
-        }).catch(err => console.log(err))
-    }
+    // const handleGetTracks = (playlistId) => {
+    //     axios.get(`https://api.spotify.com/v1/playlists/${playlistId}/tracks?fields=items(track)&limit=5`, {
+    //         headers: {
+    //             Authorization: 'Bearer ' + token
+    //         },
+    //     }).then((response) => {
+    //         setData(response.data)
+    //     }).catch(err => console.log(err))
+    // }
 
     return (
         <div className="containerTopTracks">
             <TopTrackSection name="World" color="transparent" black={false} data={DATA_TOP_TRACKS_IN_THE_WORLD} />
             <TopTrackSection name="Poland" color="#D4213D" black={true} data={DATA_TOP_TRACKS_IN_THE_WORLD} />
+            {console.log(token)}
         </div>
     )
 }
