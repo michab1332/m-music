@@ -49,7 +49,7 @@ function TopTracksSection({ token }) {
 
     useEffect(() => {
         handleGetTracksWorld(SPOTIFY_TOP_5_WORLD_ENDPOINT)
-        //handleGetTracksPoland(SPOTIFY_TOP_5_POLAND_ENDPOINT)
+        handleGetTracksPoland(SPOTIFY_TOP_5_POLAND_ENDPOINT)
     }, [])
 
 
@@ -66,22 +66,23 @@ function TopTracksSection({ token }) {
         }
     }
 
-    const handleGetTracksPoland = (playlistId) => {
-        axios.get(`https://api.spotify.com/v1/playlists/${playlistId}/tracks?fields=items(track)&limit=5`, {
-            headers: {
-                Authorization: 'Bearer ' + token
-            },
-        }).then((response) => {
-            setDataPoland(response.data)
-        }).catch(err => console.log(err))
+    const handleGetTracksPoland = async (playlistId) => {
+        try {
+            const resp = await axios.get(`https://api.spotify.com/v1/playlists/${playlistId}/tracks?fields=items(track)&limit=5`, {
+                headers: {
+                    Authorization: 'Bearer ' + token
+                },
+            })
+            setDataPoland(resp.data.items)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     return (
         <div className="containerTopTracks">
             <TopTrackSection name="World" color="transparent" black={false} data={dataWorld} />
-            <TopTrackSection name="Poland" color="#D4213D" black={true} data={DATA_TOP_TRACKS_IN_THE_WORLD} />
-            {console.log(dataWorld)}
-            {/* {console.log(dataPoland.items)} */}
+            <TopTrackSection name="Poland" color="#D4213D" black={true} data={dataPoland} />
         </div>
     )
 }

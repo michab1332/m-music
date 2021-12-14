@@ -1,18 +1,19 @@
 import React from "react";
 
-function TopTrackItem({ black, track }) {
-    const { id, nameOfArtist, nameOfSong, imgUrl } = track;
+function TopTrackItem({ black, track, index }) {
+    const { name, artists, album } = track;
     return (
         <div className="containerTopTrackItem" style={black ? { color: "#fff" } : { color: "#000" }}>
             <div className="containerTopTrackItem__content">
-                <img className="containerTopTrackItem__content-img" src={imgUrl} alt={nameOfSong}></img>
+                <img className="containerTopTrackItem__content-img" src={album.images[1].url} alt={name}></img>
                 <div className="containerTopTrackItem__content__textWrapper">
-                    <p className="containerTopTrackItem__content__textWrapper-name">{nameOfArtist}</p>
-                    <p className="containerTopTrackItem__content__textWrapper-songName">{nameOfSong}</p>
+                    <p className="containerTopTrackItem__content__textWrapper-name">{artists[0].name}</p>
+                    <p className="containerTopTrackItem__content__textWrapper-songName">{name}</p>
                 </div>
             </div>
-            <p className="containerTopTrackItem__number">{id}</p>
-        </div>
+            <p className="containerTopTrackItem__number">{index + 1}</p>
+            {/* {console.log(track)} */}
+        </div >
     )
 }
 
