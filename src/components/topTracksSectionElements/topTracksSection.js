@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import SpotifyWebApi from 'spotify-web-api-js';
-// import axios from 'axios';
+//import SpotifyWebApi from 'spotify-web-api-js';
+import axios from 'axios';
 
 import TopTrackSection from './topTrackSection';
 
@@ -44,28 +44,44 @@ const SPOTIFY_TOP_5_WORLD_ENDPOINT = "37i9dQZEVXbMDoHDwVN2tF";
 
 function TopTracksSection({ token }) {
 
-    const [data, setData] = useState([])
+    const [dataWorld, setDataWorld] = useState([])
+    const [dataPoland, setDataPoland] = useState([])
 
     useEffect(() => {
-        console.log(token)
-    })
+        handleGetTracksWorld(SPOTIFY_TOP_5_WORLD_ENDPOINT)
+        //handleGetTracksPoland(SPOTIFY_TOP_5_POLAND_ENDPOINT)
+    }, [])
 
 
-    // const handleGetTracks = (playlistId) => {
-    //     axios.get(`https://api.spotify.com/v1/playlists/${playlistId}/tracks?fields=items(track)&limit=5`, {
-    //         headers: {
-    //             Authorization: 'Bearer ' + token
-    //         },
-    //     }).then((response) => {
-    //         setData(response.data)
-    //     }).catch(err => console.log(err))
-    // }
+    const handleGetTracksWorld = async (playlistId) => {
+        try {
+            const resp = await axios.get(`https://api.spotify.com/v1/playlists/${playlistId}/tracks?fields=items(track)&limit=5`, {
+                headers: {
+                    Authorization: 'Bearer ' + token
+                },
+            })
+            setDataWorld(resp.data.items)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    const handleGetTracksPoland = (playlistId) => {
+        axios.get(`https://api.spotify.com/v1/playlists/${playlistId}/tracks?fields=items(track)&limit=5`, {
+            headers: {
+                Authorization: 'Bearer ' + token
+            },
+        }).then((response) => {
+            setDataPoland(response.data)
+        }).catch(err => console.log(err))
+    }
 
     return (
         <div className="containerTopTracks">
-            <TopTrackSection name="World" color="transparent" black={false} data={DATA_TOP_TRACKS_IN_THE_WORLD} />
+            <TopTrackSection name="World" color="transparent" black={false} data={dataWorld} />
             <TopTrackSection name="Poland" color="#D4213D" black={true} data={DATA_TOP_TRACKS_IN_THE_WORLD} />
-            {console.log(token)}
+            {console.log(dataWorld)}
+            {/* {console.log(dataPoland.items)} */}
         </div>
     )
 }
