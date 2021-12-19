@@ -42,7 +42,7 @@ const DATA_TOP_TRACKS_IN_THE_WORLD = [
 const SPOTIFY_TOP_5_POLAND_ENDPOINT = "37i9dQZEVXbN6itCcaL3Tt";
 const SPOTIFY_TOP_5_WORLD_ENDPOINT = "37i9dQZEVXbMDoHDwVN2tF";
 
-function TopTracksSection({ token }) {
+function TopTracksSection({ token, handleGetUri }) {
 
     const [dataWorld, setDataWorld] = useState([])
     const [dataPoland, setDataPoland] = useState([])
@@ -81,8 +81,8 @@ function TopTracksSection({ token }) {
 
     return (
         <div className="containerTopTracks">
-            <TopTrackSection name="World" color="transparent" black={false} data={dataWorld} />
-            <TopTrackSection name="Poland" color="#D4213D" black={true} data={dataPoland} />
+            <TopTrackSection name="World" color="transparent" black={false} data={dataWorld} handleGetUri={handleGetUri} />
+            <TopTrackSection name="Poland" color="#D4213D" black={true} data={dataPoland} handleGetUri={handleGetUri} />
         </div>
     )
 }
