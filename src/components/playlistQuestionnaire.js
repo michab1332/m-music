@@ -21,8 +21,12 @@ function PlaylistQuestionnaire({ token }) {
         }
     }
     return (
-        <div>
-            <p>hello {name}</p>
+        <div className='containerQuestionnaire'>
+            <p className='containerQuestionnaire-text'>Make your own playlist</p>
+            <div className='containerQuestionnaire__questionnaireWrapper'>
+                <p className='containerQuestionnaire__questionnaireWrapper-text'>Answer a few questions to match the playlist to your mood</p>
+                <button className='containerQuestionnaire__questionnaireWrapper-button'>click to see questions</button>
+            </div>
         </div>
     )
 }

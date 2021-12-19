@@ -24,6 +24,7 @@
     position: absolute;
     left: -10px;
     top: -10px;
+    filter: blur(20px);
 }
 
 .containerHero__heroImage-img {
@@ -31,13 +32,13 @@
     height: 700px;
     position: absolute;
     top: -120px;
-
 }
 
 .containerHero__heroImage-vector2 {
     position: absolute;
     left: 230px;
     top: 30px;
+    filter: blur(10px);
     transition: all 2s;
 }
 

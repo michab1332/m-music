@@ -68,7 +68,7 @@ function TopTracksSection({ token, handleGetUri }) {
 
     const handleGetTracksPoland = async (playlistId) => {
         try {
-            const resp = await axios.get(`https://api.spotify.com/v1/playlists/${playlistId}/tracks?fields=items(track)&limit=5`, {
+            const resp = await axios.get(`https://api.spotify.com/v1/playlists/${playlistId}/tracks?fields=items(track)&limit=10`, {
                 headers: {
                     Authorization: 'Bearer ' + token
                 },
