@@ -32,6 +32,7 @@
     color: #fff;
     margin-top: 1rem;
     font-weight: 500;
+    width: 80%;
 }
 
 .containerQuestionnaire__questionnaireWrapper-button {
@@ -54,5 +55,9 @@
 
     .containerQuestionnaire__questionnaireWrapper {
         width: 90%;
+    }
+
+    .containerQuestionnaire__questionnaireWrapper-text {
+        font-size: 1.5rem;
     }
 }

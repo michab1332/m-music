@@ -4,6 +4,7 @@ import Menu from './components/menu'
 import HeroPage from './components/heroPage';
 import TopTracksSection from './components/topTracksSectionElements/topTracksSection';
 import PlaylistQuestionnaire from './components/playlistQuestionnaire';
+import Footer from './components/topTracksSectionElements/footer';
 import Player from './components/player';
 
 import './App.css';
@@ -54,6 +55,7 @@ function App() {
       <HeroPage />
       {token !== undefined ? <TopTracksSection handleGetUri={handleGetUri} token={token} /> : null}
       {token !== undefined ? <PlaylistQuestionnaire token={token} /> : null}
+      <Footer />
       {/* Spotify Player */}
       {/* {token !== undefined ? <Player token={token} uri={uri} /> : null} */}
     </div>
