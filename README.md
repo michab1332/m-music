@@ -20,6 +20,7 @@ Project is created with:
 To run this project, install it locally using npm:
 
 ```
+$ git clone https://github.com/michab1332/m-music.git
 $ cd client
 $ npm install
 $ npm start
