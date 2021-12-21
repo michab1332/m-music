@@ -42,7 +42,7 @@ function App() {
   }, [])
 
   const handleLogin = () => {
-    window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=&${SCOPES_URL_PARAMS}&response_type=token&show_dialog=true`;
+    window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAMS}&response_type=token&show_dialog=true`;
   }
 
   const handleGetUri = (uri) => {
@@ -55,7 +55,7 @@ function App() {
       <HeroPage />
       {token !== undefined ? <TopTracksSection handleGetUri={handleGetUri} token={token} /> : null}
       {/* Spotify Player */}
-      {token !== undefined ? <Player token={token} uri={uri} /> : null}
+      {token !== undefined && uri !== undefined ? <Player token={token} uri={uri} /> : null}
       {token !== undefined ? <PlaylistQuestionnaire token={token} /> : null}
       <Footer />
     </div>

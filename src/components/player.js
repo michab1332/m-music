@@ -1,10 +1,13 @@
 import React from 'react'
 import SpotifyPlayer from 'react-spotify-web-playback';
 
+import '../styles/player.css'
+
 function Player({ token, uri }) {
+    if (!token) return null
     return (
-        <div>
-            <SpotifyPlayer token={token} uri={uri} />
+        <div className='playerContainer'>
+            <SpotifyPlayer token={token} uris={uri ? [uri] : []} autoPlay={true} />
         </div>
     )
 }
