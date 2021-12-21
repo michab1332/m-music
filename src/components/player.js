@@ -7,7 +7,7 @@ function Player({ token, uri }) {
     if (!token) return null
     return (
         <div className='playerContainer'>
-            <SpotifyPlayer token={token} uris={uri ? [uri] : []} autoPlay={true} />
+            <SpotifyPlayer token={token} uris={uri ? [uri] : []} autoPlay={true} showSaveIcon={true} />
         </div>
     )
 }

@@ -49,6 +49,7 @@ span {
     height: 100px;
     align-items: center;
     margin-top: 2rem;
+    cursor: pointer;
 }
 
 .containerTopTrackItem:last-child {
