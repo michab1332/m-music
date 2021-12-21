@@ -54,10 +54,10 @@ function App() {
       <Menu handleLogin={handleLogin} />
       <HeroPage />
       {token !== undefined ? <TopTracksSection handleGetUri={handleGetUri} token={token} /> : null}
+      {/* Spotify Player */}
+      {token !== undefined ? <Player token={token} uri={uri} /> : null}
       {token !== undefined ? <PlaylistQuestionnaire token={token} /> : null}
       <Footer />
-      {/* Spotify Player */}
-      {/* {token !== undefined ? <Player token={token} uri={uri} /> : null} */}
     </div>
   );
 }
