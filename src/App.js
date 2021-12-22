@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import Menu from './components/menu'
 import HeroPage from './components/heroPage';
@@ -29,6 +30,7 @@ const getReturnedParamsFromSpotifyAuth = (hash) => {
 function App() {
   const [token, setToken] = useState()
   const [uri, setUri] = useState()
+  const [lyrics, setLyrics] = useState()
   useEffect(() => {
     if (window.location.hash) {
       const { access_token, expires_in, token_type } = getReturnedParamsFromSpotifyAuth(window.location.hash);
@@ -45,9 +47,20 @@ function App() {
     window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAMS}&response_type=token&show_dialog=true`;
   }
 
-  const handleGetUri = (uri) => {
+  const handleGetUri = (uri, name, track) => {
     setUri(uri)
-    console.log(uri)
+    handleGetLyrics(name, track)
+  }
+
+  const handleGetLyrics = (name, track) => {
+    axios.get("https://lyrics-api-mmusic.herokuapp.com/lyrics", {
+      params: {
+        track: track,
+        artist: name
+      }
+    }).then(res => {
+      setLyrics(res.data)
+    })
   }
   return (
     <div className="App">
@@ -55,7 +68,7 @@ function App() {
       <HeroPage />
       {token !== undefined ? <TopTracksSection handleGetUri={handleGetUri} token={token} /> : null}
       {/* Spotify Player */}
-      {token !== undefined && uri !== undefined ? <Player token={token} uri={uri} /> : null}
+      {token !== undefined && uri !== undefined ? <Player lyrics={lyrics} token={token} uri={uri} /> : null}
       {token !== undefined ? <PlaylistQuestionnaire token={token} /> : null}
       <Footer />
     </div>

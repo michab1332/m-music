@@ -3,4 +3,34 @@
     position: fixed;
     bottom: 0;
     right: 0;
+    z-index: 1;
+}
+
+.lyricsContainer {
+    background-color: rgb(255, 255, 255);
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid #000;
+    color: #000;
+}
+
+.lyricsContainer-text {
+    text-decoration: underline;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #000;
+    cursor: pointer;
+}
+
+.lyricsContainer__lyricsWrapper {
+    width: 70%;
+    overflow-y: scroll;
+    white-space: pre-wrap;
+    text-align: center;
+}
+
+.-notVisible {
+    display: none;
 }
