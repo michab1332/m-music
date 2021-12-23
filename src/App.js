@@ -64,7 +64,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Menu handleLogin={handleLogin} />
+      <Menu handleLogin={handleLogin} token={token} handleGetUri={handleGetUri} />
       <HeroPage />
       {token !== undefined ? <TopTracksSection handleGetUri={handleGetUri} token={token} /> : null}
       {/* Spotify Player */}

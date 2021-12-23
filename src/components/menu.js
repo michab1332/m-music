@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 
+import SearchTracks from './searchTracks';
+
 import '../styles/menu.css'
 
-function Menu({ handleLogin }) {
-    const [search, setSearch] = useState();
+function Menu({ handleLogin, token, handleGetUri }) {
+    const [search, setSearch] = useState("");
     return (
         <div className="containerMenu">
             <div className="containerMenu__wrapper">
@@ -20,8 +22,10 @@ function Menu({ handleLogin }) {
                     <div className="containerMenu__logIn">
                         <p onClick={() => handleLogin()} className="containerMenu__logIn-text">Log in</p>
                     </div>
+
                 </div>
             </div>
+            {search !== "" ? <SearchTracks handleGetUri={handleGetUri} search={search} token={token} /> : null}
         </div>
     )
 }

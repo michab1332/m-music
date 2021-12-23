@@ -11,7 +11,7 @@ function TopTrackItem({ black, track, index, handleGetUri }) {
                     <p className="containerTopTrackItem__content__textWrapper-songName">{name}</p>
                 </div>
             </div>
-            <p className="containerTopTrackItem__number">{index + 1}</p>
+            <p className="containerTopTrackItem__number">{index !== undefined ? index + 1 : null}</p>
             {/* {console.log(track)} */}
         </div >
     )

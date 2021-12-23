@@ -75,6 +75,20 @@
     background-color: black;
 }
 
+.searchTracksContainer {
+    width: 70%;
+    min-height: 30vh;
+    max-height: 70vh    ;
+    border-bottom: 2px solid #C4C4C4;
+    border-left: 2px solid #C4C4C4;
+    border-right: 2px solid #C4C4C4;
+    background-color: #fff; 
+    position: absolute;
+    overflow-y: scroll;
+    z-index: 99;
+    top: 90px;
+}
+
 @media only screen and (max-width: 570px) {
     .containerMenu__form-searchSymbol {
         width: 19px;
@@ -100,3 +114,11 @@
         cursor: pointer;
     }
   }
+
+@media only screen and (max-width: 520px) {
+    .searchTracksContainer {
+        width: 90%;
+        border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    }
+}

@@ -14,7 +14,7 @@ function Footer() {
                 <ul className='footer__wrapperBottom-list'>
                     <li className='footer__wrapperBottom-listItem'>contact</li>
                     <li className='footer__wrapperBottom-listItem'>spotify api</li>
-                    <li className='footer__wrapperBottom-listItem'>refund policy</li>
+                    <li className='footer__wrapperBottom-listItem'>my github</li>
                 </ul>
             </div>
         </footer>
