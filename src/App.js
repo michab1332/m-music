@@ -10,10 +10,10 @@ import Player from './components/player';
 
 import './App.css';
 
-const CLIENT_ID = '9c8c76ea27ae46618af6ad0921529907';
+const CLIENT_ID = "9c8c76ea27ae46618af6ad0921529907";
 const SPOTIFY_AUTHORIZE_ENDPOINT = 'https://accounts.spotify.com/authorize';
 const REDIRECT_URL_AFTER_LOGIN = 'http://localhost:3000';
-const SCOPES = ["streaming", "user-read-email", "user-read-private", "user-read-playback-state", "user-modify-playback-state", "user-library-read"];
+const SCOPES = ["streaming", "user-read-email", "user-read-private", "user-read-playback-state", "user-modify-playback-state", "user-library-read", "user-top-read"];
 const SCOPES_URL_PARAMS = SCOPES.join("%20");
 
 const getReturnedParamsFromSpotifyAuth = (hash) => {

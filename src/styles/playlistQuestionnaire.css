@@ -47,6 +47,14 @@
     cursor: pointer;
 }
 
+.containerQuestionnaire__questionnaireWrapper-questions {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
 @media only screen and (max-width: 670px) {
     .containerQuestionnaire-text {
         font-size: 2rem;
