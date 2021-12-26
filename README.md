@@ -21,17 +21,18 @@ To run this project, install it locally using npm:
 
 ```
 $ git clone https://github.com/michab1332/m-music.git
-$ cd client
+$ cd m-music
 $ npm install
 $ npm start
 ```
 
 ## Features
-* generating a playlist matching the current mood after answering a few questions
-
-### To do: 
 * display lyrics
 * search artist and tracks
+* playing music
+
+### To do: 
+* generating a playlist matching the current mood after answering a few questions
 
 ## Status
 not finished
