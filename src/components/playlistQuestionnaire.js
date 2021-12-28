@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 
+import GeneratePlaylist from './generatePlaylist';
+
 import '../styles/playlistQuestionnaire.css'
 
 const QUESTIONS = [
@@ -57,14 +59,7 @@ const QUESTIONS = [
         }
     }
 ]
-
-const SPOTIFY_GET_FAV_TRACKS = "https://api.spotify.com/v1/me/top/tracks?limit=50"
 const SPOTIFY_GET_NAME = "https://api.spotify.com/v1/me"
-const SPOTIFY_GET_SAVED_TRACKS = "https://api.spotify.com/v1/me/tracks?limit=30"
-const SPOTIFY_GET_TOPLIST_TRACKS = "https://api.spotify.com/v1/playlists/37i9dQZEVXbN6itCcaL3Tt/tracks"
-const SPOTIFY_GET_PARTY_TRACKS = "https://api.spotify.com/v1/playlists/37i9dQZF1DX6gb9mP6Vy34/tracks"
-const SPOTIFY_GET_UPMOOD_TRACKS = "https://api.spotify.com/v1/playlists/37i9dQZF1DX3rxVfibe1L0/tracks"
-const SPOTIFY_GET_CHILL_TRACKS = "https://api.spotify.com/v1/playlists/37i9dQZF1DXakrXW5YU9SI/tracks"
 
 function Questionaire({ token, numberOfItem, handleChangeQuestion, handleOnAnswerChange, getDataFromSpotifyApi }) {
     const [name, setName] = useState('')
@@ -89,66 +84,7 @@ function Questionaire({ token, numberOfItem, handleChangeQuestion, handleOnAnswe
     )
 }
 
-function GeneratePlaylist({ typesTab, token, getDataFromSpotifyApi }) {
-    const [data, setData] = useState([])
-    useEffect(() => {
-        getData()
-    }, [])
-    const getData = () => {
-        if (typesTab.includes('saved')) {
-            Promise.resolve(getDataFromSpotifyApi(SPOTIFY_GET_FAV_TRACKS)).then((res) => {
-                setData(prevState => [...prevState, ...getRandomTracks(res.items)])
-            })
-        }
-        if (typesTab.includes('party')) {
-            Promise.resolve(getDataFromSpotifyApi(SPOTIFY_GET_PARTY_TRACKS)).then((res) => {
-                setData(prevState => [...prevState, ...getRandomTracks(res.items)])
-            })
-        }
-        if (typesTab.includes('badMood')) {
-            Promise.resolve(getDataFromSpotifyApi(SPOTIFY_GET_UPMOOD_TRACKS)).then((res) => {
-                setData(prevState => [...prevState, ...getRandomTracks(res.items)])
-            })
-        }
-        if (typesTab.includes('chill')) {
-            Promise.resolve(getDataFromSpotifyApi(SPOTIFY_GET_CHILL_TRACKS)).then((res) => {
-                setData(prevState => [...prevState, ...getRandomTracks(res.items)])
-            })
-        }
-        if (typesTab.includes('popular')) {
-            //console.log(data)
-        }
-        if (typesTab.includes('notPopular')) {
-            //console.log(data)
-        }
-    }
-
-    const getRandomInt = (min, max) => {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min)) + min;
-    }
-
-    const getRandomTracks = (array) => {
-        let tab = []
-        for (let i = 0; i <= 10; i++) {
-            const rand = getRandomInt(0, array.length)
-            tab.push(rand)
-        }
-        const gArray = array.filter((item, index) => {
-            return tab.includes(index)
-        })
-        return (gArray)
-    }
-
-    return (
-        <div className='containerQuestionnaire'>
-            {console.log(data)}
-        </div>
-    )
-}
-
-function PlaylistQuestionnaire({ token }) {
+function PlaylistQuestionnaire({ token, handleGetUri }) {
     const [numberOfItem, setNumberOfItem] = useState(0)
     const [type, setType] = useState('')
     const [typesTab, setTypesTab] = useState([])
@@ -169,7 +105,7 @@ function PlaylistQuestionnaire({ token }) {
         return resp.data
     }
     return (
-        numberOfItem === 5 ? <GeneratePlaylist typesTab={typesTab} token={token} getDataFromSpotifyApi={getDataFromSpotifyApi} /> : <Questionaire getDataFromSpotifyApi={getDataFromSpotifyApi} token={token} numberOfItem={numberOfItem} handleChangeQuestion={handleChangeQuestion} handleOnAnswerChange={handleOnAnswerChange} />
+        numberOfItem === 5 ? <GeneratePlaylist token={token} handleGetUri={handleGetUri} typesTab={typesTab} getDataFromSpotifyApi={getDataFromSpotifyApi} /> : <Questionaire getDataFromSpotifyApi={getDataFromSpotifyApi} token={token} numberOfItem={numberOfItem} handleChangeQuestion={handleChangeQuestion} handleOnAnswerChange={handleOnAnswerChange} />
     )
 }
 

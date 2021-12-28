@@ -9,7 +9,6 @@ function SearchTracks({ search, token, handleGetUri }) {
     const [data, setData] = useState([])
     useEffect(() => {
         handleSearchTracks()
-        console.log(data)
     }, [search])
 
     const handleSearchTracks = async () => {
