@@ -30,9 +30,10 @@ $ npm start
 * display lyrics
 * search artist and tracks
 * playing music
+* generating a playlist matching the current mood after answering a few questions
 
 ### To do: 
-* generating a playlist matching the current mood after answering a few questions
+* music recognition (using shazam api)
 
 ## Status
 not finished
